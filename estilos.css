@@ -6,11 +6,9 @@
 }
 
 
-
 body {
     background-color: rgb(255, 255, 255);
-    width: 100%;
-    height: 100vh;
+
 }
 
 
@@ -40,15 +38,19 @@ section {
     padding: 5px;
 }
 
+.pruebaMargen {
+    margin-left: 70px;
+    padding: 10px;
+    margin-right: 50px;
+    margin-bottom: 20px;
+}
+
 aside {
     height: 50px;
 }
 
-ul {
-    list-style-type: none;
-    padding: 10px;
 
-}
+
 p {
     color: rgb(37, 39, 27);
 
@@ -75,7 +77,7 @@ nav {
     color: azure;
     text-align: center;
     width: 100%;
-    padding: 10px;
+    padding: 50px;
 
 }
 
@@ -171,35 +173,30 @@ section article h2 {
     text-align: center;
 }
 
-img {
-    margin-left: 100px;
-    margin-top: 10px;
-    margin-right: 150px;
-
-}
 
 .caja {
     background-color: rgb(255, 255, 255);
-
+    height: 50px;
 }
 
 
 .caja2 {
     background-color: rgb(253, 253, 253);
     margin:5px 5px 5px 5px;
-
+    height: 50px;
 }
 
 
 .caja3 {
     background-color: rgb(255, 255, 255);
     margin:5px 5px 5px 5px;
-
+    height: 250px;
 }
 
 .caja4 {
     background-color: rgb(255, 255, 255);
     margin:5px 5px 5px 5px;
+    height: 250px;
 
 }
 
@@ -232,6 +229,7 @@ article {
 .flexProductos {
     display: flex;
 }
+
 
 
 .logoHeader {
@@ -296,12 +294,12 @@ aside {
     /* 3 columnas y 4 filas */
     grid-template-areas: 
     "cabeza menu menu"/* fila 1 */
-    "lateral productos productos"
-    "lateral servicios servicios"/* fila 2 */
+    "productos productos productos"
+    "servicios servicios servicios"/* fila 2 */
     "pie pie pie"/* fila 3 */;
 
     grid-template-columns: 20% 25% 30% 30%;
-    grid-template-rows: 2fr 5fr 5fr 2fr;
+    grid-template-rows: 80px 400px 400px 50px;
     grid-column-gap: 100px;
     grid-row-gap: 20px;
 }
@@ -316,8 +314,8 @@ aside {
     "lateral productos productos"/* fila 2 */
     "pie pie pie"/* fila 3 */;
 
-    grid-template-columns: 20% 25% 30% 30%;
-    grid-template-rows: 1fr 5fr fr 2fr;
+    grid-template-columns: 20% 25% 20% 20%;
+    grid-template-rows: 1fr 5fr fr 1fr;
     grid-column-gap: 100px;
     grid-row-gap: 20px;
 }
@@ -326,15 +324,17 @@ aside {
     display: grid;
     /* 3 columnas y 4 filas */
     grid-template-areas: 
-    "cabeza menu menu"/* fila 1 */
-    "lateral productos productos"
-    "lateral servicios servicios"/* fila 2 */
-    "pie pie pie"/* fila 3 */;
+    "cabeza menu menu menu"/* fila 1 */
+    "productos productos productos productos"
+    "servicios servicios servicios servicios"/* fila 2 */
+    "banners banners banners banners"
+    "destacados destacados destacados destacados"
+    "pie pie pie pie"/* fila 3 */;
 
-    grid-template-columns: 20% 25% 30% 30%;
-    grid-template-rows: 2fr 5fr 5fr 2fr;
-    grid-column-gap: 100px;
-    grid-row-gap: 20px;
+    grid-template-columns: 20% 25% 23.5% 20%;
+    grid-template-rows: 2.5fr 4fr 5fr 1fr 3fr 2fr;
+    grid-column-gap: 50px;
+    grid-row-gap: 50px;
 }
 
 /*Nombrar cada area */
@@ -350,6 +350,15 @@ header {
  section#servicios {
     grid-area: servicios;     
  }
+
+ section#banners {
+    grid-area: banners;     
+ }
+
+ section#destacados {
+    grid-area: destacados;     
+ }
+
  nav {
     grid-area: menu;
  }
@@ -381,23 +390,24 @@ img {
 
 
  @media (min-width: 481px) and (max-width: 1023px){
-    #gridAreas {
+
+    #gridHome {
         display: grid;
         /* 3 columnas y 4 filas */
         grid-template-areas: 
-        "cabeza cabeza"
-        "menu menu"
-        /* fila 1 */ 
-        "productos productos" /* fila 2*/
-        "lateral servicios"/* fila 3 */
-        "pie pie"/* fila 4 */
-        ;
-        /* Tamaño */
-        grid-template-columns: 50% auto;
-        grid-template-rows: 1fr 1fr 3fr 3fr 10%;
-        grid-column-gap: 10px;
-        grid-row-gap: 5px;
+        "cabeza cabeza cabeza menu"/* fila 1 */
+        "productos productos productos productos"
+        "servicios servicios servicios servicios"/* fila 2 */
+        "banners banners banners banners"
+        "destacados destacados destacados destacados"
+        "pie pie pie pie"/* fila 3 */;
+    
+        grid-template-columns: 20% 25% 23.5% 20%;
+        grid-template-rows: 2.5fr 2fr 5fr 1fr 5fr;
+        grid-column-gap: 50px;
+        grid-row-gap: 50px;
     }
+    
 
     .menuFlex {
 
@@ -405,10 +415,10 @@ img {
         flex-direction: row;
     
     }
-    
 
+
+  
     li {
-        margin-left: 5px;
         padding: 15px;
         width: 100px;
     }
@@ -424,31 +434,61 @@ img {
         width: 100%;
         padding: 0px;
     }
-    
-    img {
-        margin-left: 0;
+
+    .pruebaMargen {
+        margin-left: 20px;
+        padding: 10px;
+        margin-right: 50px;
+        margin-bottom: 20px;
     }
+
+    .responsive {
+        width: 100%;
+        height: 300px;
+    }
+    
+    .responsive2 {
+        width: 100%;
+        height: 100px;
+    }
+
+    #gridAreas {
+        display: grid;
+        /* 3 columnas y 4 filas */
+        grid-template-areas: 
+        "cabeza menu menu"/* fila 1 */
+        "productos productos productos"
+        "servicios servicios servicios"/* fila 2 */
+        "pie pie pie"/* fila 3 */;
+    
+        grid-template-columns: 20% 25% 30% 30%;
+        grid-template-rows: 80px 400px 400px;
+        grid-column-gap: 50px;
+        grid-row-gap: 20px;
+    }
+
+
 }
 
 @media (max-width: 480px){
     /* GRID por AREAS */
-    #gridAreas {
+    #gridHome {
         display: grid;
         /* 3 columnas y 4 filas */
         grid-template-areas: 
         "cabeza"/* fila 1 */ 
         "menu"
         "productos"
-        "lateral"
-        "servicios" /* fila 2*/
-       /* fila 3 */
+        "servicios"
+        "banners"
+        "destacados"
         "pie"/* fila 4 */
         ;
         /* Tamaño */
         grid-template-columns: 100%;
-        grid-template-rows: 1fr 1fr 3fr 3fr 10%;
+        grid-template-rows: 80px 50px 50px 1200px 50px 1200px 50px;
         grid-column-gap: 10px;
-        grid-row-gap: 5px;
+        grid-row-gap: 30px;
     }
 
     .flexProductos {
@@ -456,18 +496,55 @@ img {
         flex-direction: column;
     }
     img {
-        margin-left: 0;
+        padding: 5px;
+        justify-content: space-between;
     }
+    
 
     nav {
         background-color: rgb(255, 255, 255);
         color: azure;
         text-align: center;
-        width: 100%;
-        padding: 0px;
+        padding: 25px;
+        margin-bottom: 120px;
     }
 
     header {
         text-align: center;
+        height: 100px;
     }
+
+    .responsive {
+        width: 100%;
+        height: 300px;
+        }
+    
+    .responsive2 {
+        width: 100%;
+        height: 100px;
+    }
+
+
+    .pruebaMargen {
+        margin-left: 20px;
+        padding: 10px;
+        margin-right: 50px;
+        margin-bottom: 80px;
+        height: 50px;
+    }
+
+    .responsiveMob {
+        display: inline-block;
+    }
+
+    .cajaLiquidacion {
+        padding: 20px;
+    }
+
+    article {
+        padding: 10px;
+        margin: 5x 5px 5px 5px;
+        justify-content: space-between;
+    }
+
  }
